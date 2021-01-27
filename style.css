@@ -1,0 +1,87 @@
+:root {
+  --primary: #262859;
+  --secondary: #7a96f8;
+  --accent: #73bcf9;
+}
+
+html,
+body {
+  background-color: var(--primary);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.loader {
+  /* background-color: var(--secondary); */
+  padding: 5rem;
+  width: 25%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+.loader img {
+  width: 100%;
+  z-index: 2;
+}
+
+.liquid {
+  position: absolute;
+  width: 250%;
+  height: 250%;
+  z-index: inherit;
+  animation: fill 10s linear;
+  transform: translateY(-200px);
+  background-color: var(--accent);
+}
+
+.loader .liquid:after,
+.loader .liquid:before {
+  content: '';
+  position: absolute;
+  background-color: var(--accent);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+
+.loader .liquid:after {
+  border-radius: 40%;
+  background-color: var(--primary);
+  animation: animate 10s linear infinite;
+}
+
+.loader .liquid:before {
+  border-radius: 45%;
+  background-color: var(--primary);
+  opacity: 0.5;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -70%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -70%) rotate(360deg);
+  }
+}
+
+@keyframes fill {
+  0% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(-200px);
+  }
+}
