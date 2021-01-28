@@ -40,7 +40,7 @@ body {
   height: 250%;
   z-index: inherit;
   animation: fill 10s linear;
-  transform: translateY(-200px);
+  transform: translateY(-180px);
   background-color: var(--accent);
 }
 
